@@ -1,9 +1,6 @@
 package org.example;
 
-import org.example.dailyChallenges.model.AddingSpacesToAString;
-import org.example.dailyChallenges.model.CheckIfAWordOccursAsAPrefixOfAnyWord;
-import org.example.dailyChallenges.model.MakeStringASubsequenceUsingCyclicIncrements;
-import org.example.dailyChallenges.model.MovePiecesToObtainAString;
+import org.example.dailyChallenges.model.*;
 import org.example.leetCodeProblems.model.TrappingRainWater;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -19,7 +16,11 @@ public class Main {
         // System.out.println(new TrappingRainWater().solve((new int[] {0,1,0,2,1,0,1,3,2,1,2,1})));
 
 
-        System.out.println(new MovePiecesToObtainAString().canChange("_L__R__RL", "L_____RLR"));
-        System.out.println(new MovePiecesToObtainAString().canWork("_L__R__RL", "L_____RLR"));
+        //System.out.println(new MovePiecesToObtainAString().canChange("_L__R__RL", "L_____RLR"));
+        //System.out.println(new MovePiecesToObtainAString().canWork("_L__R__RL", "L_____RLR"));
+
+      //  System.out.println(new MaxNoOfIntegersToChooseFromRangeI().maxCount(new int[]{11},7,50));
+
+        System.out.println(new MinLimitOfBallsInABag().minimumSize(new int[] {9}, 2));
     }
 }
