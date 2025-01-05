@@ -21,6 +21,8 @@ public class Main {
 
       //  System.out.println(new MaxNoOfIntegersToChooseFromRangeI().maxCount(new int[]{11},7,50));
 
-        System.out.println(new MinLimitOfBallsInABag().minimumSize(new int[] {9}, 2));
+
+        System.out.println(new TrappingRainWater().solve(new int[] {0,1,0,2,1,0,1,3,2,1,2,1}));
+        //System.out.println(new MinLimitOfBallsInABag().minimumSize(new int[] {9}, 2));
     }
 }
