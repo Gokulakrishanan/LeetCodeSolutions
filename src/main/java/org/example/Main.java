@@ -1,6 +1,8 @@
 package org.example;
 
-import org.example.dailyChallenges.model.CountPrefixAndSuffixPairsI;
+import org.example.dailyChallenges.model.MinNumberOfOpsToMoveBallsToEachBox;
+
+import java.util.Arrays;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -30,7 +32,8 @@ public class Main {
 
         //System.out.println(new StringMatchingInAnArray().stringMatching(new String[]{"mass", "as", "hero", "superhero"}));
 
-        System.out.println(new CountPrefixAndSuffixPairsI().countPairs(new String[]{"a", "aba", "ababa", "aa"}));
-        System.out.println(new CountingWordsWithAGivenPrefix().prefixCount(new String[]{"pay", "attention", "practice", "attend"}, "at"));
+        //System.out.println(new CountPrefixAndSuffixPairsI().countPairs(new String[]{"a", "aba", "ababa", "aa"}));
+        //System.out.println(new CountingWordsWithAGivenPrefix().prefixCount(new String[]{"pay", "attention", "practice", "attend"}, "at"));
+        System.out.println(Arrays.toString(new MinNumberOfOpsToMoveBallsToEachBox().minOperations("001011")));
     }
 }
