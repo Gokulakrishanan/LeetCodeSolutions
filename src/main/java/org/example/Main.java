@@ -1,7 +1,6 @@
 package org.example;
 
-import org.example.dailyChallenges.model.*;
-import org.example.leetCodeProblems.model.TrappingRainWater;
+import org.example.dailyChallenges.model.CountPrefixAndSuffixPairsI;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -19,10 +18,19 @@ public class Main {
         //System.out.println(new MovePiecesToObtainAString().canChange("_L__R__RL", "L_____RLR"));
         //System.out.println(new MovePiecesToObtainAString().canWork("_L__R__RL", "L_____RLR"));
 
-      //  System.out.println(new MaxNoOfIntegersToChooseFromRangeI().maxCount(new int[]{11},7,50));
+        //  System.out.println(new MaxNoOfIntegersToChooseFromRangeI().maxCount(new int[]{11},7,50));
 
 
-        System.out.println(new TrappingRainWater().solve(new int[] {0,1,0,2,1,0,1,3,2,1,2,1}));
+        //  System.out.println(new TrappingRainWater().solve(new int[]{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1}));
         //System.out.println(new MinLimitOfBallsInABag().minimumSize(new int[] {9}, 2));
+
+        //System.out.println(new UniqueLength3PalindromicSubsequences().countPalindrome("aabca"));
+
+        String[] words = {"mass", "as", "hero", "superhero"};
+
+        //System.out.println(new StringMatchingInAnArray().stringMatching(new String[]{"mass", "as", "hero", "superhero"}));
+
+        System.out.println(new CountPrefixAndSuffixPairsI().countPairs(new String[]{"a", "aba", "ababa", "aa"}));
+        System.out.println(new CountingWordsWithAGivenPrefix().prefixCount(new String[]{"pay", "attention", "practice", "attend"}, "at"));
     }
 }
