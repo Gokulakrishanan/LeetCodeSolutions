@@ -26,7 +26,7 @@ boxes[i] is either '0' or '1'.
 public class MinNumberOfOpsToMoveBallsToEachBox {
     public int[] minOperations(String boxes) {
 
-        int n = boxes.length(), leftCount = 0, leftSum = 0, rightSum = 0, rightCount = 0;
+        /*int n = boxes.length(), leftCount = 0, leftSum = 0, rightSum = 0, rightCount = 0;
         int[] result = new int[n];
         //traversing the array from left to right
         for (int i = 0; i < n; i++) {
@@ -44,6 +44,28 @@ public class MinNumberOfOpsToMoveBallsToEachBox {
                 rightSum += i;
             }
         }
+        return result;*/
+
+        int n = boxes.length(), leftCount = 0, rightCount = 0, leftSum = 0, rightSum = 0;
+
+        int[] result = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            result[i] = leftCount * i - leftSum;
+            if (boxes.charAt(i) == '1') {
+                leftCount++;
+                leftSum += i;
+            }
+        }
+
+        for (int i = n - 1; i >= 0; i--) {
+            result[i] += rightSum - rightCount * i;
+            if (boxes.charAt(i) == '1') {
+                rightCount++;
+                rightSum += i;
+            }
+        }
         return result;
+
     }
 }
