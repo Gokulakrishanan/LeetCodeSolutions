@@ -1,7 +1,5 @@
 package org.example;
 
-import org.example.dailyChallenges.model.CountNumberOfBadPairs;
-
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -34,7 +32,7 @@ public class Main {
         //System.out.println(new CountingWordsWithAGivenPrefix().prefixCount(new String[]{"pay", "attention", "practice", "attend"}, "at"));
         //System.out.println(Arrays.toString(new MinNumberOfOpsToMoveBallsToEachBox().minOperations("001011")));
         //System.out.println(new FirstCompletelyPaintedRowOrColumns().firstCompleteIndex(new int[]{1, 4, 5, 2, 6, 3}, new int[][]{{4, 3, 5}, {1, 2, 6}}));
-        System.out.println(new CountNumberOfBadPairs().countBadPairs(new int[]{4, 1, 3, 3}));
+        //System.out.println(new CountNumberOfBadPairs().countBadPairs(new int[]{4, 1, 3, 3}));
         /*
          * 0-4 -4 // 0-1 != 4-1
          * 1-1 0
