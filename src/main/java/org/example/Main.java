@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.dailyChallenges.model.MaxSumOfAPairWithEqualSumOfDigits;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -40,5 +42,7 @@ public class Main {
          * 3-3 0
          * */
         //System.out.println(new CourseScheduleIV().checkIfPrerequisite(2, new int[][]{{1, 0}}, new int[][]{{0, 1}, {1, 0}}));
+        //System.out.println(new RemoveAllOccurencesOfASubstring().removeOccurence("daabcbaabcbc", "abc"));
+        System.out.println(new MaxSumOfAPairWithEqualSumOfDigits().maximumSum(new int[]{4, 6, 10, 6}));
     }
 }
