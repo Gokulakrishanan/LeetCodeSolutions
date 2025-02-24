@@ -1,4 +1,5 @@
 package org.example.dailyChallenges.model;
+
 /*You are given two strings start and target, both of length n. Each string consists only of the characters 'L', 'R', and '_' where:
 
 The characters 'L' and 'R' represent pieces, where a piece 'L' can move to the left only if there is a blank space directly to its left, and a piece 'R' can move to the right only if there is a blank space directly to its right.
@@ -35,79 +36,79 @@ n == start.length == target.length
 1 <= n <= 105
 start and target consist of the characters 'L', 'R', and '_'.*/
 public class MovePiecesToObtainAString {
-    public boolean canChange(String word, String targetWord){
+    public boolean canChange(String word, String targetWord) {
 
         //Check the length of the strings
-        if (word.length()!=targetWord.length()){
+        if (word.length() != targetWord.length()) {
             return false;
         }
         //Initialization of pointers and capturing the length of the strings
-        int n = word.length() , m= targetWord.length(), start =0, target = 0;
-        while(start<n && target<m){
+        int n = word.length(), m = targetWord.length(), start = 0, target = 0;
+        while (start < n && target < m) {
             //Getting the character at the pointers
             char startChar = word.charAt(start);
             char targetChar = targetWord.charAt(target);
 
             //Check for the blank spaces and increase the pointers
-            if (startChar == '_' && targetChar =='_'){
+            if (startChar == '_' && targetChar == '_') {
                 start++;
                 target++;
             }
             // increase the pointers if one has blank space and the other has character
-            else if (startChar =='_'){
+            else if (startChar == '_') {
                 start++;
-            } else if (targetChar=='_') {
+            } else if (targetChar == '_') {
                 target++;
             }
             //Check for the characters in either strings and check whether the 'L'(ONLY SHIFTS TO LEFT) and 'R'(ONLY SHIFTS TO RIGHT) are present and check for their shifts
-            else if (startChar==targetChar && ((startChar == 'L' && start>=target) || (startChar =='R' && start<=target) ) ) {
+            else if (startChar == targetChar && ((startChar == 'L' && start >= target) || (startChar == 'R' && start <= target))) {
                 start++;
                 target++;
-            }else {
+            } else {
                 return false;
             }
         }
         //Check for the starting char of the strings whether it's a blank space or not and increase the pointers
-        while(start<n && word.charAt(start)=='_'){
+        while (start < n && word.charAt(start) == '_') {
             start++;
         }
-        while(target<m && targetWord.charAt(target)=='_'){
+        while (target < m && targetWord.charAt(target) == '_') {
             target++;
         }
-        return start==n && target==m;
+        return start == n && target == m;
     }
 
-    public boolean canWork(String start, String target){
+    public boolean canWork(String start, String target) {
         //Strings to charArray
         char[] startChar = start.toCharArray();
         char[] targetChar = target.toCharArray();
         //Initialization of pointers and length of the Strings
-        int startPointer = 0, targetPointer = 0, n = start.length(),m = target.length();
+        int startPointer = 0, targetPointer = 0, n = start.length(), m = target.length();
 
         //Execute when the pointers are within the length
-        while(startPointer<=n && targetPointer<=m){
+        while (startPointer <= n && targetPointer <= m) {
             //Check for the blank space character '_'
-            while(startPointer<n && startChar[startPointer]=='_' ){
+            while (startPointer < n && startChar[startPointer] == '_') {
                 startPointer++;
             }
-            while(targetPointer<m && targetChar[targetPointer]=='_' ){
+            while (targetPointer < m && targetChar[targetPointer] == '_') {
                 targetPointer++;
             }
 
             //if StartingPointer in the word and the TargetPointer in the target is equal to their lengths
-            if (startPointer==n || targetPointer==m){
-                return startPointer==n && targetPointer==m;
+            if (startPointer == n || targetPointer == m) {
+                return startPointer == n && targetPointer == m;
             }
             //If the characters are not same in either arrays
-            else if(startChar[startPointer]!=targetChar[targetPointer]){
+            else if (startChar[startPointer] != targetChar[targetPointer]) {
                 return false;
             }
             //if start char in the word is 'L' it can move ONLY TO THE LEFT!!
-            else if (startChar[startPointer] =='L' && startPointer<targetPointer) {
+            else if (startChar[startPointer] == 'L' && startPointer < targetPointer) {
                 return false;
             }
             //if start char in the word is 'R' it can move ONLY TO THE RIGHT!!
-            else if (startChar[startPointer] =='R' && startPointer>targetPointer) {
+            else if (startChar[startPointer] == 'R' && startPointer > targetPointer) {
                 return false;
             }
             //Increment the pointers and check for the remaining characters

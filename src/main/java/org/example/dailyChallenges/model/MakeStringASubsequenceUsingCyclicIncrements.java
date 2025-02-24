@@ -1,4 +1,5 @@
 package org.example.dailyChallenges.model;
+
 /*You are given two 0-indexed strings str1 and str2.
 
 In an operation, you select a set of indices in str1, and for each index i in the set, increment str1[i] to the next character cyclically. That is 'a' becomes 'b', 'b' becomes 'c', and so on, and 'z' becomes 'a'.
@@ -31,16 +32,16 @@ Output: false
 Explanation: In this example, it can be shown that it is impossible to make str2 a subsequence of str1 using the operation at most once.
 Therefore, false is returned.*/
 public class MakeStringASubsequenceUsingCyclicIncrements {
-    public boolean isSubSequence(String word, String targetWord){
+    public boolean isSubSequence(String word, String targetWord) {
 
         int wordLength = word.length(), targetLength = targetWord.length();
         int wordIndex = 0, targetIndex = 0;
-        while(wordIndex<wordLength && targetIndex<targetLength){
+        while (wordIndex < wordLength && targetIndex < targetLength) {
             char wordChar = word.charAt(wordIndex), targetChar = targetWord.charAt(targetIndex);
-            if ((wordChar==targetChar) || (wordChar=='z' && targetChar =='a') || (wordChar+1 == targetChar)){
+            if ((wordChar == targetChar) || (wordChar == 'z' && targetChar == 'a') || (wordChar + 1 == targetChar)) {
                 wordIndex++;
                 targetIndex++;
-            }else {
+            } else {
                 wordIndex++;
             }
         }

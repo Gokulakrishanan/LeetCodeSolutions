@@ -9,7 +9,7 @@ public class MakingALargeIsland {
 
     private static final int[][] directions = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
     private int[][] grid;
-    private Map<Integer, Integer> islandSizes = new HashMap<>();
+    private final Map<Integer, Integer> islandSizes = new HashMap<>();
     private int length;
 
     public int largestIsland(int[][] grid) {

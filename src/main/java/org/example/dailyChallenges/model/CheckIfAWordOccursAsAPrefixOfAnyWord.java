@@ -34,19 +34,19 @@ sentence consists of lowercase English letters and spaces.
 searchWord consists of lowercase English letters.*/
 public class CheckIfAWordOccursAsAPrefixOfAnyWord {
 
-    public int isPrefixOfWord(String word,String searchWord){
+    public int isPrefixOfWord(String word, String searchWord) {
         String[] result = word.split(" ");
-        int i =0;
+        int i = 0;
         for (String s : result) {
-            if(prefixOfaWord(s,searchWord)){
-                return i+1;
+            if (prefixOfaWord(s, searchWord)) {
+                return i + 1;
             }
             i++;
         }
         return -1;
     }
 
-    private boolean prefixOfaWord(String word, String searchWord){
+    private boolean prefixOfaWord(String word, String searchWord) {
         return word.startsWith(searchWord);
     }
 }

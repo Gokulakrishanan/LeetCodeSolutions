@@ -4,7 +4,9 @@ import java.util.*;
 
 public class UniqueLength3PalindromicSubsequences {
     public int countPalindromicSubsequence(String s) {
-        int first[] = new int[26], last[] = new int[26], res = 0;
+        int[] first = new int[26];
+        int[] last = new int[26];
+        int res = 0;
 
         Arrays.fill(first, Integer.MAX_VALUE);
         for (int i = 0; i < s.length(); i++) {

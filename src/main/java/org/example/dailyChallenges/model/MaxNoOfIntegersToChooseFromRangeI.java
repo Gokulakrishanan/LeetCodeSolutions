@@ -38,20 +38,20 @@ Constraints:
 1 <= banned[i], n <= 104
 1 <= maxSum <= 109*/
 public class MaxNoOfIntegersToChooseFromRangeI {
-    public int maxCount(int[] banned, int n, int maxSum){
+    public int maxCount(int[] banned, int n, int maxSum) {
         Set<Integer> set = new HashSet<>();
         for (int i : banned) {
             set.add(i);
         }
-        int count =0,sum =0;
-        for (int i = 1; i <=n ; i++) {
-            if (set.contains(i)){
+        int count = 0, sum = 0;
+        for (int i = 1; i <= n; i++) {
+            if (set.contains(i)) {
                 continue;
             }
-            if (sum +i >maxSum){
+            if (sum + i > maxSum) {
                 return count;
             }
-            sum +=i;
+            sum += i;
             count++;
         }
         return count;

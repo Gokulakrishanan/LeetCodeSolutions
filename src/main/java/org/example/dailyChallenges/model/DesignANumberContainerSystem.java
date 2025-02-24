@@ -36,6 +36,7 @@ public class DesignANumberContainerSystem {
 
     private Map<Integer, Integer> indexToNumber;
     private Map<Integer, PriorityQueue<Integer>> numberToIndices;
+
     public DesignANumberContainerSystem() {
     }
 

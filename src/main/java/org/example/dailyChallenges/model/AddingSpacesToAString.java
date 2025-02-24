@@ -1,4 +1,5 @@
 package org.example.dailyChallenges.model;
+
 /*You are given a 0-indexed string s and a 0-indexed integer array spaces that describes the indices in the original string where spaces will be added. Each space should be inserted before the character at the given index.
 
 For example, given s = "EnjoyYourCoffee" and spaces = [5, 9], we place spaces before 'Y' and 'C', which are at indices 5 and 9 respectively. Thus, we obtain "Enjoy Your Coffee".
@@ -36,15 +37,15 @@ s consists only of lowercase and uppercase English letters.
 0 <= spaces[i] <= s.length - 1
 All the values of spaces are strictly increasing.*/
 public class AddingSpacesToAString {
-    public String addSpaces(String word, int[] spaces){
-        StringBuilder stringBuilder = new StringBuilder(word.length()+spaces.length);
-        int j =0;
-        for (int i = 0; i <word.length() ; i++) {
-            if(j< spaces.length && i==spaces[j] ){
+    public String addSpaces(String word, int[] spaces) {
+        StringBuilder stringBuilder = new StringBuilder(word.length() + spaces.length);
+        int j = 0;
+        for (int i = 0; i < word.length(); i++) {
+            if (j < spaces.length && i == spaces[j]) {
                 stringBuilder.append(" ");
                 j++;
             }
-             stringBuilder.append(word.charAt(i));
+            stringBuilder.append(word.charAt(i));
         }
         return stringBuilder.toString();
     }
