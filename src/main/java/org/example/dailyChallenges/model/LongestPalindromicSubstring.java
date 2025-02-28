@@ -2,25 +2,24 @@ package org.example.dailyChallenges.model;
 
 public class LongestPalindromicSubstring {
     public String longestPalindrome(String s) {
-        if (s.length() < 2) {
-            return s;
-        }
-        int start = 0, end = 0;
+        if (s.length() < 2) return s;
+        int left = 0, right = 0;
         for (int i = 0; i < s.length(); i++) {
-            int odd = expandAroundTheCenter(s, i, i);
-            int even = expandAroundTheCenter(s, i, i + 1);
-            int maxLength = Math.max(odd, even);
+            int odd = expandAroundThePivot(s, i, i);
+            int even = expandAroundThePivot(s, i, i + 1);
+            int length = Math.max(odd, even);
 
-            if (maxLength > end - start) {
-                start = i - (maxLength - 1) / 2;
-                end = i + maxLength / 2;
+            if (length > right - left) {
+                left = i - (length - 1) / 2;
+                right = i + length / 2;
             }
+
         }
 
-        return s.substring(start, end + 1);
+        return s.substring(left, right + 1);
     }
 
-    public int expandAroundTheCenter(String s, int left, int right) {
+    private int expandAroundThePivot(String s, int left, int right) {
         while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
             left--;
             right++;
