@@ -1,8 +1,6 @@
 package org.example;
 
-import org.example.dailyChallenges.model.NextGreaterElementI;
-
-import java.util.Arrays;
+import org.example.dailyChallenges.model.ApplyOperationToAnArray;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -48,8 +46,8 @@ public class Main {
         //System.out.println(new MaxSumOfAPairWithEqualSumOfDigits().maximumSum(new int[]{4, 6, 10, 6}));
         //System.out.println(new SubarraySumEqualsK().subarraySum(new int[]{1, 2, 3}, 3));
         //System.out.println((int) Math.pow(10, 9) + 7);
-        int[] x = new NextGreaterElementI().nextGreaterElement(new int[]{2, 4}, new int[]{1, 2, 3, 4});
-        System.out.println(Arrays.toString(x));
+        int[] nums = new int[]{1, 2, 2, 1, 1, 0};
+        System.out.println(new ApplyOperationToAnArray().applyOperations(nums));
 
     }
 }
