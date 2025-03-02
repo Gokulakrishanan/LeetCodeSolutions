@@ -24,12 +24,11 @@ str1 and str2 consist of lowercase English letters.
 */
 public class ShortestCommonSubsequence {
     private String findLCS(String str1, String str2) {
-        StringBuilder ans = new StringBuilder();
-        int s1Len = str1.length(), s2Len = str2.length();
-        int[][] dp = new int[s1Len + 1][s2Len + 2];
+        int n1 = str1.length(), n2 = str2.length();
+        int[][] dp = new int[n1 + 1][n2 + 1];
 
-        for (int i = 1; i <= s1Len; i++) {
-            for (int j = 1; j < +s2Len; j++) {
+        for (int i = 1; i <= n1; i++) {
+            for (int j = 1; j <= n2; j++) {
                 if (str1.charAt(i - 1) == str2.charAt(j - 1)) {
                     dp[i][j] = dp[i - 1][j - 1] + 1;
                 } else {
@@ -37,41 +36,50 @@ public class ShortestCommonSubsequence {
                 }
             }
         }
-        int i = s1Len, j = s2Len;
+        StringBuilder lcs = new StringBuilder();
+        int i = n1;
+        int j = n2;
+
         while (i > 0 && j > 0) {
             if (str1.charAt(i - 1) == str2.charAt(j - 1)) {
-                ans.append(str1.charAt(i - 1));
-            } else if (dp[i - 1][j] > dp[i][j - 1]) {
+                lcs.append(str1.charAt(i - 1));
                 i--;
-            } else {
                 j--;
+            } else if (dp[i - 1][j] > dp[i][j - 1]) {
+                j--;
+            } else {
+                i--;
             }
         }
-        return ans.reverse().toString();
+
+        return lcs.reverse().toString();
     }
 
     public String shortestCommonSupersequence(String str1, String str2) {
-        StringBuilder answer = new StringBuilder();
+        if (str1 == null || str2 == null) {
+            return null;
+        }
         String lcs = findLCS(str1, str2);
+
+        StringBuilder ans = new StringBuilder();
+
         int p1 = 0, p2 = 0;
         for (char ch : lcs.toCharArray()) {
             while (p1 < str1.length() && str1.charAt(p1) != ch) {
-                answer.append(str1.charAt(p1++));
+                ans.append(str1.charAt(p1++));
             }
-
-            while (p1 < str2.length() && str2.charAt(p2) != ch) {
-                answer.append(str2.charAt(p2++));
+            while (p2 < str2.length() && str2.charAt(p2) != ch) {
+                ans.append(str2.charAt(p2++));
             }
-
-            answer.append(ch);
+            ans.append(ch);
             p1++;
             p2++;
+
         }
+        ans.append(str1.substring(p1));
+        ans.append(str2.substring(p2));
 
-        answer.append(str1.substring(p1));
-        answer.append(str2.substring(p2));
-        return answer.toString();
-
-
+        return ans.toString();
     }
+
 }

@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.dailyChallenges.model.ApplyOperationToAnArray;
+import org.example.dailyChallenges.model.SmallestStockPrice;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -46,8 +46,13 @@ public class Main {
         //System.out.println(new MaxSumOfAPairWithEqualSumOfDigits().maximumSum(new int[]{4, 6, 10, 6}));
         //System.out.println(new SubarraySumEqualsK().subarraySum(new int[]{1, 2, 3}, 3));
         //System.out.println((int) Math.pow(10, 9) + 7);
-        int[] nums = new int[]{1, 2, 2, 1, 1, 0};
-        System.out.println(new ApplyOperationToAnArray().applyOperations(nums));
+//        int[] nums = new int[]{1, 2, 2, 1, 1, 0};
+//        System.out.println(new ApplyOperationToAnArray().applyOperations(nums));
+
+
+        int[] stock = new int[]{10, 5, 25, 18, 17, 88, 19};
+        System.out.println(new SmallestStockPrice().smallestStockPrice(stock, 3));
+
 
     }
 }

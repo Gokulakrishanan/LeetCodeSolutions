@@ -1,5 +1,7 @@
 package org.example.dailyChallenges.model;
 
+import java.util.BitSet;
+
 /*Given a binary tree with the following rules:
 
 root.val == 0
@@ -53,8 +55,11 @@ findElements.find(5); // return True
 public class FindElementsInAContaminatedBinaryTree {
 
 
+    BitSet bitSet;
+
     public FindElementsInAContaminatedBinaryTree(TreeNode root) {
         root.val = 0;
+        new BitSet();
         recoverTree(root);
 
     }
@@ -62,6 +67,7 @@ public class FindElementsInAContaminatedBinaryTree {
     private void recoverTree(TreeNode root) {
         if (root == null) return;
 
+        bitSet.set(root.val);
         if (root.left != null) {
             root.left.val = 2 * root.val + 1;
             recoverTree(root.left);
@@ -73,7 +79,7 @@ public class FindElementsInAContaminatedBinaryTree {
     }
 
     public boolean find(int target) {
-        return false;
+        return bitSet.get(target);
     }
 }
 
@@ -82,9 +88,13 @@ class TreeNode {
     TreeNode left;
     TreeNode right;
 
+    public TreeNode() {
+    }
+
     public TreeNode(int val) {
         this.val = val;
     }
+
 
     public TreeNode(int val, TreeNode left, TreeNode right) {
         this.val = val;
