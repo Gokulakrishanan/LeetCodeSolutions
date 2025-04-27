@@ -60,14 +60,14 @@ public class CountOFSubstringsContainingEveryVowelAndKConsonantsII {
         int currentK = 0, extraLeft = 0, vowels = 0;
         for (int right = 0, left = 0; right < word.length(); right++) {
             char rightChar = word.charAt(right);
-            if (freq[0][rightChar] == 1 && freq[1][rightChar]++ == 1) {
+            if (freq[0][rightChar] == 1 && ++freq[1][rightChar] == 1) {
                 vowels++;
             } else if (freq[0][rightChar] == 0) {
                 currentK++;
             }
             while (currentK > k) {
                 char leftChar = word.charAt(left);
-                if (freq[0][leftChar] == 1 && freq[1][leftChar]-- == 0) {
+                if (freq[0][leftChar] == 1 && --freq[1][leftChar] == 0) {
                     vowels--;
                 } else if (freq[0][leftChar] == 0) {
                     currentK--;
