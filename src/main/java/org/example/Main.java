@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.dailyChallenges.model.NumberOfSubstringsContainingAllThreeCharacters;
+import org.example.dailyChallenges.model.TypeOfTriangle;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -56,7 +56,9 @@ public class Main {
         int[] nums = new int[]{9, 12, 5, 10, 14, 3, 10};
         //System.out.println(Arrays.toString(new PartitionArrayAccordingToGivenPivot().pivotArray(nums, 10)));
 
-        System.out.println(new NumberOfSubstringsContainingAllThreeCharacters().numberOfSubstrings("abcabc"));
+        //System.out.println(new NumberOfSubstringsContainingAllThreeCharacters().numberOfSubstrings("abcabc"));
+
+        System.out.println(new TypeOfTriangle().typeOfTriangle(new int[]{3, 3, 3}));
 
 
     }
