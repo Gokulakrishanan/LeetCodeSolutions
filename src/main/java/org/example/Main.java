@@ -1,7 +1,5 @@
 package org.example;
 
-import org.example.dailyChallenges.model.TypeOfTriangle;
-
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -58,7 +56,15 @@ public class Main {
 
         //System.out.println(new NumberOfSubstringsContainingAllThreeCharacters().numberOfSubstrings("abcabc"));
 
-        System.out.println(new TypeOfTriangle().typeOfTriangle(new int[]{3, 3, 3}));
+        //System.out.println(new TypeOfTriangle().typeOfTriangle(new int[]{3, 3, 3}));
+
+        boolean value = false;
+
+        if (value) {
+            System.out.println("True executed first");
+        } else {
+            System.out.println("False executed first");
+        }
 
 
     }
